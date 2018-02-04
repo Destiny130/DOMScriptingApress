@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>What to buy</h1>
+    <p title="a gentle reminder">Don't forget to buy this stuff.</p>
+    <ul id="purchases">
+        <li>A tin of beans</li>
+        <li style="text-transform:uppercase;">Cheese</li>
+        <li>Milk</li>
+    </ul>
+    <script>
+        for (var i = 0; i < document.getElementsByTagName("li").length; i++) {
+            console.log(i + ": " + typeof document.getElementsByTagName("li")[i]);
+        }
+
+        var totalTag = document.getElementsByTagName("*");
+        var totalTagNum = totalTag.length;
+        console.log("totalTagNum: " + totalTagNum);
+        for (var i = 0; i < totalTagNum; i++) {
+            console.log(totalTag[i].nodeName);
+        }
+
+        console.log(document.getElementsByClassName("test").length);
+    </script>
+</body>
+</html>
