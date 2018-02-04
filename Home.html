@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DOM Scripting Apress</title>
+    <style>
+        ol li {
+            padding:4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Home</h1>
+    <ol id="chapterList"></ol>
+    <script>
+        window.onload = function ()
+        {
+            var chapterNum = 13;
+            (function ()
+            {
+                var i = 1, chapterListInner = '';
+                for (; i < chapterNum; i++) {
+                    var space = i < 10 ? "&nbsp&nbsp" : "";
+                    chapterListInner += '<li id="chapter' + i + '">Chapter ' + space + i + '</li>';
+                }
+                var chapterList = document.getElementById("chapterList");
+                if (chapterList) chapterList.innerHTML = chapterListInner;
+
+
+            })();
+        };
+    </script>
+</body>
+</html>
