@@ -13,22 +13,46 @@
     <h1>Home</h1>
     <ol id="chapterList"></ol>
     <script>
-        window.onload = function ()
-        {
-            var chapterNum = 13;
-            (function ()
-            {
+        window.onload = function () {
+            chapterNum = 13;
+            (function () {
                 var i = 1, chapterListInner = '';
                 for (; i < chapterNum; i++) {
                     var space = i < 10 ? "&nbsp&nbsp" : "";
-                    chapterListInner += '<li id="chapter' + i + '">Chapter ' + space + i + '</li>';
+                    chapterListInner += '<li id="chapter' + i + '">Chapter ' + space + i + '</li><ul id="chapter' + i + 'List" class="hide"></ul>';
                 }
                 var chapterList = document.getElementById("chapterList");
                 if (chapterList) chapterList.innerHTML = chapterListInner;
-
-
             })();
-        };
+            CheckDetail();
+        }
+
+        function CheckDetail() {
+            (function () {
+                for (var i = 1; i < chapterNum; i++) {
+                    var chapteri = document.getElementById("chapter" + i);
+                    chapteri.setAttribute("onclick", "Show(this)");
+                    //console.log(i + ", " + chapteri.getAttribute("onclick"));
+                }
+            })();
+        }
+
+        function Show(obj) {
+            var chapterList = obj.nextSibling;
+            //console.log(chapterList);
+            var ulInner = '';
+            ulInner += '<li><a>test</a></li>';
+            chapterList.innerHTML = ulInner;
+            chapterList.style.display = "block";
+            obj.setAttribute("onclick", "Toggle(this.nextSibling)");
+        }
+
+        function Toggle(obj) {  //Define a toggle.
+            if (obj.style.display == 'none')
+                obj.style.display = "block";
+            else
+                obj.style.display = "none";
+        }
     </script>
 </body>
 </html>
