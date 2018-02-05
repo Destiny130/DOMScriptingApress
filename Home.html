@@ -31,22 +31,30 @@
             (function () {
                 for (var i = 1; i < chapterNum; i++) {
                     var chapteri = document.getElementById("chapter" + i);
-                    chapteri.setAttribute("onclick", "Show(this)");
+                    chapteri.setAttribute("onclick", "Show(this, " + i + ")");
                     //console.log(i + ", " + chapteri.getAttribute("onclick"));
                 }
             })();
         }
 
-        function Show(obj) {
+        function Show(obj, i) {
             var chapterList = obj.nextSibling;
             //console.log(chapterList);
             var ulInner = '';
-            ulInner += '<li><a>test</a></li>';
+            switch (i) {
+                case 1:
+                    ulInner += '<li><a href="https://www.baidu.com">test</a></li>';
+                    break;
+                case 2:
+                    break;
+                default:
+                    break;
+            }
             chapterList.innerHTML = ulInner;
             chapterList.style.display = "block";
             obj.setAttribute("onclick", "Toggle(this.nextSibling)");
         }
-
+        
         function Toggle(obj) {  //Define a toggle.
             if (obj.style.display == 'none')
                 obj.style.display = "block";
