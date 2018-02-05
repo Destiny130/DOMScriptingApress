@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>DOM Scripting Apress</title>
     <style>
         ol li {
-            padding:4px;
+            padding: 4px;
         }
-        
+
         .hide {
             display: none;
         }
@@ -19,9 +19,12 @@
 </head>
 <body>
     <h1>Home</h1>
-    <ol id="chapterList"  class="width120"></ol>
+    <ol id="chapterList" class="width120"></ol>
+
     <script>
-        window.onload = function () {
+        window.onload = LoadIndex;
+
+        function LoadIndex() {
             chapterNum = 13;
             (function () {
                 var i = 1, chapterListInner = '';
@@ -62,7 +65,7 @@
             chapterList.style.display = "block";
             obj.setAttribute("onclick", "Toggle(this.nextSibling)");
         }
-        
+
         function Toggle(obj) {  //Define a toggle.
             if (obj.style.display == 'none')
                 obj.style.display = "block";
