@@ -30,3 +30,12 @@ td {
     width: 10em;
     padding: .5em;
 }
+
+.intro {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.odd {
+    background-color: #ffc;
+}
