@@ -1,4 +1,4 @@
-function AddOnloadEvent(func) {
+function AddloadEvent(func) {
     var oldonload = window.onload;
     if (typeof window.onload != 'function') window.onload = func;
     else window.onload = function() {
@@ -82,9 +82,9 @@ function AddElementWithCreateElementAndFragment() {
     console.timeEnd("withCreateElementAndFragment");
 }
 
-// AddOnloadEvent(AddElementsWithInnerHTML);
-// AddOnloadEvent(AddElementWithCreateElement);
-AddOnloadEvent(AddElementWithCreateElementAndFragment);
+// AddloadEvent(AddElementsWithInnerHTML);
+// AddloadEvent(AddElementWithCreateElement);
+// AddloadEvent(AddElementWithCreateElementAndFragment);
 
 /*  Execution Result:  execute 8~9 times, and record max time spent.
     Using Chrome, FireFox faster than Chrome, 360 spent double time than Chrome
